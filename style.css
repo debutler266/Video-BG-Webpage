@@ -1,0 +1,210 @@
+/* custom property*/
+
+:root {
+  --overlay-color: #03a9f4;
+}
+
+
+
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: 'Nanum Gothic', sans-serif;
+}
+
+.showcase {
+  position: absolute;
+  right: 0; /* 0 from the right */
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  color: #ffffff;
+  z-index: 2; /*will always be in front of menu */
+  transition: 0.7s;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: url('menu.png');
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.showcase header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /*pushes menu png over to right */
+}
+
+.showcase.active {
+  /*because on .showcase we have position of right 0;*/
+  right: 300px;
+}
+
+.logo {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.toggle.active {
+  background: url('close.png');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.showcase video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*very important for displaying video properly, no unneccesary space*/
+  opacity: 0.8;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*can add or remove these 2 properties on .overlay if you prefer*/
+  background: var(--overlay-color);
+  mix-blend-mode: overlay;
+}
+
+.text {
+  position: relative;
+  z-index: 10; /* puts text on top of .showcase header */
+}
+
+.text h2 {
+  font-size: 5em; /* 5em = whatever font size of parent container is, multiply * by 5*/
+  font-weight: 800;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.text h3 {
+  font-size: 4em;
+  font-weight: 700;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.text p {
+  font-size: 1.1em;
+  margin: 20px 0;
+  font-weight: 400;
+  max-width: 700px; /* keeps text from over-stretching on the page*/
+}
+
+.text a {
+  display: inline-block;
+  font-size: 1em;
+  background: #ffffff;
+  padding: 10px 30px;
+  text-decoration: none;
+  color: #222;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* remeber to add transitions on effects!!!*/
+  transition: 0.3s;
+}
+
+.text a:hover {
+  letter-spacing: 6px;
+}
+
+.social {
+  position: absolute;
+  bottom: 20px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social li {
+  list-style: none;
+}
+
+.social li a {
+  display: inline-block;
+  margin-right: 20px;
+  color: #ffffff;
+  transform: scale(0.5);
+  transition: 0.7s;
+}
+
+.social li a:hover {
+  /* Move icons up */
+  transform: scale(0.5) translateY(-15px);
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu ul {
+  position: relative;
+  list-style: none;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #222;
+}
+
+.menu ul li a:hover {
+  color: var(--overlay-color);
+}
+
+
+
+
+
+
+@media(max-width: 798px) {
+  .showcase .showcase header {
+    padding: 40px;
+  }
+
+
+  .text h2 {
+    font-size: 3em;
+  }
+
+
+  .text h3 {
+    font-size: 2em;
+  }
+}
