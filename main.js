@@ -14,6 +14,10 @@ menuToggle.addEventListener('click', () => {
 
 
 //
-var bgvideo = document.getElementById("BgVideo");
-bgvideo.muted = true;
-bgvideo.play();
+document.addEventListener("DOMContentLoaded", function(){
+  // Handler when the DOM is fully loaded
+  $("video").get(0).volume=0;
+  $('video').attr('playsinline',true);
+  $('video').attr('muted',"muted");
+  $('video').get(0).play()
+});
