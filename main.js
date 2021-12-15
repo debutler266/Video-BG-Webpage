@@ -13,7 +13,7 @@ menuToggle.addEventListener('click', () => {
 
 
 
-//
+//fixes video no playing on mobile devices for chrome/safri based on Apple update in 2018
 document.addEventListener("DOMContentLoaded", function(){
   // Handler when the DOM is fully loaded
   $("video").get(0).volume=0;
