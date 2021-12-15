@@ -10,3 +10,10 @@ menuToggle.addEventListener('click', () => {
   menuToggle.classList.toggle('active')
   showcase.classList.toggle('active')
 });
+
+
+
+//
+var bgvideo = document.getElementById("BgVideo");
+bgvideo.muted = true;
+bgvideo.play();
